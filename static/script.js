@@ -122,13 +122,14 @@ async function loadHistory() {
         historyDiv.innerHTML = '';
         
         // Show most recent first
-        history.reverse().forEach(entry => {
+        history.reverse().forEach((entry, index) => {
             const date = new Date(entry.completed);
             const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
             
             const itemDiv = document.createElement('div');
             itemDiv.className = 'history-item';
             itemDiv.innerHTML = `
+                <button class="delete-btn" onclick="deleteHistoryItem(${index})">×</button>
                 <div class="date">${dateStr}</div>
                 <div class="challenge">${entry.kills}x ${entry.boss}</div>
             `;
@@ -138,4 +139,20 @@ async function loadHistory() {
     } catch (error) {
         console.error('Error loading history:', error);
     }
+}
+
+async function deleteHistoryItem(index) {
+ try {
+    const response = await fetch(`api/history/${index}`, {method: `DELETE`});
+
+    if (response.ok){
+    loadHistory();
+    }
+
+ } catch (error) {
+    console.error('Error deleting: ', error);
+ }
+
+ 
+
 }

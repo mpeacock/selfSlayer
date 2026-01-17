@@ -1,20 +1,5 @@
 [
   {
-    "boss": "King Black Dragon",
-    "kills": 31,
-    "completed": "2026-01-16T20:45:12.672137"
-  },
-  {
-    "boss": "Giant Mole",
-    "kills": 34,
-    "completed": "2026-01-16T20:45:22.923140"
-  },
-  {
-    "boss": "Zulrah",
-    "kills": 46,
-    "completed": "2026-01-16T20:45:32.146916"
-  },
-  {
     "boss": "Zulrah",
     "kills": 40,
     "completed": "2026-01-16T21:27:26.871421"
@@ -28,25 +13,5 @@
     "boss": "Duke",
     "kills": 41,
     "completed": "2026-01-16T21:27:36.900320"
-  },
-  {
-    "boss": "Doom",
-    "kills": 6,
-    "completed": "2026-01-16T21:50:16.989059"
-  },
-  {
-    "boss": "Duke",
-    "kills": 39,
-    "completed": "2026-01-16T21:52:03.943718"
-  },
-  {
-    "boss": "Sarachnis",
-    "kills": 36,
-    "completed": "2026-01-17T16:21:00.015689"
-  },
-  {
-    "boss": "Bryan",
-    "kills": 6,
-    "completed": "2026-01-17T16:25:55.503151"
   }
 ]

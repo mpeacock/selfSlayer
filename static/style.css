@@ -207,6 +207,10 @@ button {
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .history-item .date {
@@ -226,4 +230,11 @@ button {
     color: #a0aec0;
     padding: 40px;
     font-style: italic;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
 }

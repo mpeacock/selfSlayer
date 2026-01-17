@@ -117,8 +117,25 @@ def get_history():
     log = load_log()
     return jsonify(log[-20:])  # Last 20 entries
 
+
+@app.route('/api/history/<int:index>', methods=['DELETE'])
+def delete_history(index):
+    log = load_log()
+    
+    if 0 <= index < len(log):
+        # Convert frontend index to actual list index
+        actual_index = len(log) - 1 - index
+        log.pop(actual_index)
+        save_log(log)
+        return jsonify({'success': True})
+    
+    return jsonify({'error': 'Invalid index'}), 400
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    debug_mode = os.environ.get('ENVIRONMENT') == 'development'
+    app.run(debug=debug_mode, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
 '''
 TO DO
