@@ -9,21 +9,20 @@ app = Flask(__name__)
 # OSRS Bosses with their kill count ranges
 BOSSES = {
     "Zulrah": (20, 50),
-    "Vorkath": (20, 50),
     "Corporeal Beast": (20, 50),
-    "Dagannoth Rex": (20, 50),
-    "Dagannoth Prime": (20, 50),
-    "Dagannoth Supreme": (20, 50),
     "Giant Mole": (20, 50),
-    "Kalphite Queen": (20, 50),
+    "Kalphite Queen": (15, 30),
     "King Black Dragon": (20, 50),
-    "Chaos Elemental": (20, 50),
     "Sarachnis": (20, 50),
-    "Nightmare": (20, 50),
     "Phosani's Nightmare": (20, 50),
-    "Nex": (20, 50),
     "Chambers of Xeric": (1, 3),
     "Theatre of Blood": (1, 3),
+    "Leviathan": (20, 50),
+    "Duke": (20, 50),
+    "Vardorvis": (20, 50),
+    "The Whisperer": (20, 50),
+    "Yama": (10,20),
+    "Doom": (5, 10)
 }
 
 CONFIG_FILE = "boss_config.json"
@@ -118,3 +117,18 @@ def get_history():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+'''
+TO DO
+
+Add a delete button next to history items
+ - You'll need to:
+    Add a button in the HTML/JavaScript where history displays
+    Create a new Flask route to handle deletion
+    Pass the entry info to Flask
+    Remove it from boss_log.json
+    Refresh the history display
+
+TURN OFF DEBUG MODE
+
+'''

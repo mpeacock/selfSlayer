@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -41,7 +41,7 @@ h2 {
 
 .challenge-box {
     background: #f8f9fa;
-    border: 3px solid #667eea;
+    border: 3px solid #ea6666;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -58,8 +58,7 @@ h2 {
 }
 
 .challenge-box.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-color: #764ba2;
+    background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
 }
 
 .challenge-box.active p {
@@ -86,7 +85,7 @@ button {
 }
 
 #generate-btn {
-    background: #667eea;
+    background: #ea6666;
     color: white;
 }
 
@@ -143,15 +142,15 @@ button {
 }
 
 .boss-item.enabled {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-color: #764ba2;
+    background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+    border-color: #a24b4b;
     color: white;
 }
 
 .boss-checkbox {
     width: 20px;
     height: 20px;
-    border: 2px solid #667eea;
+    border: 2px solid #ea6666;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -166,7 +165,7 @@ button {
 
 .boss-checkbox::after {
     content: '✓';
-    color: #667eea;
+    color: #ea6666;
     font-weight: bold;
     display: none;
 }
@@ -188,7 +187,7 @@ button {
 }
 
 .history-section button {
-    background: #667eea;
+    background: #ea6666;
     color: white;
     margin-bottom: 20px;
 }
