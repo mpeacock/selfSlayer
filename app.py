@@ -23,7 +23,6 @@ BOSSES = {
     "The Whisperer": (20, 50),
     "Yama": (10,20),
     "Doom": (5, 10),
-    "Bryan": (5, 10)
 }
 
 CONFIG_FILE = "boss_config.json"
