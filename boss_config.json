@@ -1,11 +1,11 @@
 {
-  "Zulrah": true,
+  "Zulrah": false,
   "Vorkath": false,
-  "Corporeal Beast": false,
+  "Corporeal Beast": true,
   "Dagannoth Rex": false,
   "Dagannoth Prime": false,
   "Dagannoth Supreme": false,
-  "Giant Mole": false,
+  "Giant Mole": true,
   "Kalphite Queen": false,
   "King Black Dragon": false,
   "Chaos Elemental": false,
@@ -13,7 +13,12 @@
   "Nightmare": false,
   "Phosani's Nightmare": false,
   "Nex": false,
-  "Chambers of Xeric": false,
+  "Chambers of Xeric": true,
   "Theatre of Blood": false,
-  "Duke": true
+  "Duke": true,
+  "Leviathan": false,
+  "Vardorvis": false,
+  "Doom": true,
+  "Yama": false,
+  "The Whisperer": false
 }

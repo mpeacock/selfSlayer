@@ -64,7 +64,7 @@ async function generateChallenge() {
         
         const displayDiv = document.getElementById('challenge-display');
         displayDiv.className = 'challenge-box active';
-        displayDiv.innerHTML = `<p>Kill ${challenge.kills}x ${challenge.boss}</p>`;
+        displayDiv.innerHTML = `<p>Kill ${challenge.kills} x ${challenge.boss}</p>`;
         
         document.getElementById('complete-btn').disabled = false;
         

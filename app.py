@@ -65,6 +65,7 @@ def get_bosses():
             'min_kills': min_k,
             'max_kills': max_k
         })
+    bosses_data.sort(key=lambda x: x['name']) 
     return jsonify(bosses_data)
 
 # API endpoint to toggle a boss
