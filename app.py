@@ -134,19 +134,8 @@ def delete_history(index):
 if __name__ == '__main__':
     import os
     debug_mode = os.environ.get('ENVIRONMENT') == 'development'
-    app.run(debug=debug_mode, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=debug_mode, host='0.0.0.0', port=int(os.environ.get('PORT', 5001)))
 
 '''
-TO DO
-
-Add a delete button next to history items
- - You'll need to:
-    Add a button in the HTML/JavaScript where history displays
-    Create a new Flask route to handle deletion
-    Pass the entry info to Flask
-    Remove it from boss_log.json
-    Refresh the history display
-
-TURN OFF DEBUG MODE
 
 '''

@@ -7,18 +7,32 @@ document.addEventListener('DOMContentLoaded', function() {
     loadHistory();
 });
 
+function getBossConfig(){
+    const saved = localStorage.getItem('bossConfig');
+    if (saved){
+        return JSON.parse(saved);
+    }
+
+    return {};
+}
+
 // Load all bosses and their enabled status
 async function loadBosses() {
     try {
         const response = await fetch('/api/bosses');
         const bosses = await response.json();
         
+        const config = getBossConfig();
+
         const bossListDiv = document.getElementById('boss-list');
         bossListDiv.innerHTML = '';
         
         bosses.forEach(boss => {
             const bossDiv = document.createElement('div');
-            bossDiv.className = `boss-item ${boss.enabled ? 'enabled' : ''}`;
+
+            const isEnabled = config[boss.name] !== false;
+
+            bossDiv.className = `boss-item ${isEnabled ? 'enabled' : ''}`;
             bossDiv.onclick = () => toggleBoss(boss.name);
             
             bossDiv.innerHTML = `
@@ -34,18 +48,21 @@ async function loadBosses() {
 }
 
 // Toggle a boss on/off
-async function toggleBoss(bossName) {
-    try {
-        const response = await fetch(`/api/toggle/${bossName}`, {
-            method: 'POST'
-        });
-        
-        if (response.ok) {
-            loadBosses(); // Reload to show updated status
-        }
-    } catch (error) {
-        console.error('Error toggling boss:', error);
+function toggleBoss(bossName) {
+    const saved = localStorage.getItem('bossConfig');
+
+    let config;
+    if (saved){
+        config = JSON.parse(saved);
+    } else {
+        config = {};
     }
+
+    config[bossName] = !config[bossName];
+
+    localStorage.setItem('bossConfig', JSON.stringify(config));
+    loadBosses();
+
 }
 
 // Generate a new challenge
