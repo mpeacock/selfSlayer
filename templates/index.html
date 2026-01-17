@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSRS Boss Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🗡️ OSRS Boss Challenge Generator</h1>
+        
+        <!-- Current Challenge Section -->
+        <div class="challenge-section">
+            <h2>Current Challenge</h2>
+            <div id="challenge-display" class="challenge-box">
+                <p>Click "Generate Challenge" to start!</p>
+            </div>
+            <div class="button-group">
+                <button id="generate-btn" onclick="generateChallenge()">Generate Challenge</button>
+                <button id="complete-btn" onclick="completeChallenge()" disabled>Mark Complete</button>
+            </div>
+        </div>
+
+        <!-- Boss Toggle Section -->
+        <div class="bosses-section">
+            <h2>Boss Selection</h2>
+            <div id="boss-list" class="boss-grid">
+                <!-- Bosses will be loaded here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-section">
+            <h2>Completion History</h2>
+            <button onclick="loadHistory()">Refresh History</button>
+            <div id="history-list">
+                <!-- History will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

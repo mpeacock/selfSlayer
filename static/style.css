@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Challenge Section */
+.challenge-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.challenge-box {
+    background: #f8f9fa;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-box p {
+    font-size: 1.3em;
+    color: #333;
+}
+
+.challenge-box.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #764ba2;
+}
+
+.challenge-box.active p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#generate-btn {
+    background: #667eea;
+    color: white;
+}
+
+#generate-btn:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+#complete-btn {
+    background: #48bb78;
+    color: white;
+}
+
+#complete-btn:hover:not(:disabled) {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+#complete-btn:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* Boss Selection */
+.bosses-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.boss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.boss-item {
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boss-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.boss-item.enabled {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #764ba2;
+    color: white;
+}
+
+.boss-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #667eea;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.boss-item.enabled .boss-checkbox {
+    background: white;
+    border-color: white;
+}
+
+.boss-checkbox::after {
+    content: '✓';
+    color: #667eea;
+    font-weight: bold;
+    display: none;
+}
+
+.boss-item.enabled .boss-checkbox::after {
+    display: block;
+}
+
+.boss-name {
+    font-weight: 600;
+}
+
+/* History Section */
+.history-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.history-section button {
+    background: #667eea;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.history-section button:hover {
+    background: #5568d3;
+}
+
+#history-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #f8f9fa;
+    border-left: 4px solid #48bb78;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.history-item .date {
+    color: #718096;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.history-item .challenge {
+    font-weight: bold;
+    color: #2d3748;
+    font-size: 1.1em;
+}
+
+.empty-message {
+    text-align: center;
+    color: #a0aec0;
+    padding: 40px;
+    font-style: italic;
+}
